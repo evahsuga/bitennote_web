@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Test: このCSSが読み込まれているかテスト */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-text-dark bg-white;
+    @apply leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading leading-heading;
+  }
+}
+
+@layer utilities {
+  .gradient-warm {
+    background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);
+  }
+
+  .gradient-cool {
+    background: linear-gradient(135deg, #FEC8D8 0%, #C3ECFA 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
