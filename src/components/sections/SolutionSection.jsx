@@ -145,6 +145,33 @@ export const SolutionSection = () => {
               </strong>
               です。
             </p>
+
+            {/* CF根拠資料 */}
+            <div className="mt-16 max-w-3xl mx-auto">
+              <a
+                href="https://camp-fire.jp/projects/656368/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-80 transition-opacity duration-300"
+              >
+                <img
+                  src="/images/campfire_美点発見.png"
+                  alt="クラウドファンディング - 美点発見プロジェクト"
+                  className="w-full rounded-2xl shadow-lg"
+                />
+              </a>
+              <p className="text-sm text-gray-500 text-center mt-4">
+                クラウドファンディング詳細はこちら →{' '}
+                <a
+                  href="https://camp-fire.jp/projects/656368/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-coral hover:underline"
+                >
+                  CAMPFIRE プロジェクトページ
+                </a>
+              </p>
+            </div>
           </div>
         </ScrollReveal>
       </Container>
