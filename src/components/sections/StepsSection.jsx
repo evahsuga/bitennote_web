@@ -103,7 +103,7 @@ export const StepsSection = () => {
         {/* 複数デバイス対応 */}
         <ScrollReveal delay={0.6}>
           <div className="mt-20 max-w-3xl mx-auto">
-            <Card className="gradient-cool text-white text-center p-12">
+            <Card className="bg-gradient-to-br from-pink-500 to-blue-500 text-white text-center p-12">
               <h3 className="text-3xl font-bold mb-6">
                 💻 複数のデバイスで使える
               </h3>
