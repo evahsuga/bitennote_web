@@ -2,6 +2,7 @@ import React from 'react';
 import { HeroSection } from './components/sections/HeroSection';
 import { ProblemSection } from './components/sections/ProblemSection';
 import { SolutionSection } from './components/sections/SolutionSection';
+import { BridgeSection } from './components/sections/BridgeSection';
 import { StepsSection } from './components/sections/StepsSection';
 import { TestimonialsSection } from './components/sections/TestimonialsSection';
 import { DeveloperSection } from './components/sections/DeveloperSection';
@@ -15,6 +16,7 @@ function App() {
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
+      <BridgeSection />
       <StepsSection />
       <TestimonialsSection />
       <DeveloperSection />
