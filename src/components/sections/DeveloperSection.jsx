@@ -21,12 +21,12 @@ export const DeveloperSection = () => {
         </ScrollReveal>
 
         {/* プロフィールエリア */}
-        <div className="grid md:grid-cols-5 gap-12 mb-16">
-          {/* 左側: 写真 + 書籍 (40%) */}
-          <ScrollReveal delay={0.2} className="md:col-span-2">
+        <div className="grid md:grid-cols-2 gap-12 mb-16 items-start">
+          {/* 左側: 写真 + 書籍 */}
+          <ScrollReveal delay={0.2}>
             <div className="flex flex-col items-center md:items-start">
               {/* 写真 */}
-              <div className="max-w-xs w-full mb-8">
+              <div className="w-full max-w-sm mb-8">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center">
                   <span className="text-white text-6xl font-bold">佐藤</span>
                 </div>
@@ -48,8 +48,8 @@ export const DeveloperSection = () => {
             </div>
           </ScrollReveal>
 
-          {/* 右側: プロフィール (60%) */}
-          <ScrollReveal delay={0.4} className="md:col-span-3">
+          {/* 右側: プロフィール */}
+          <ScrollReveal delay={0.4}>
             <div>
               {/* 名前・肩書き */}
               <h3 className="text-3xl font-bold text-gray-800 mb-2">
