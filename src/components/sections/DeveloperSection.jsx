@@ -4,8 +4,9 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const DeveloperSection = () => {
   const books = [
-    { image: '/images/books/mangetsu-book.jpg', title: '満月の法則' },
-    { image: '/images/books/monday-book.jpg', title: 'しんどい月曜の朝がラクになる本' },
+    { image: '/images/201610満月の法則.png', title: '満月の法則' },
+    { image: '/images/202402-monday-book.png', title: 'しんどい月曜日の朝がラクになる本' },
+    { image: '/images/202510-mangetsu-counseling.png', title: '満月カウンセリング' },
   ];
 
   return (
@@ -27,8 +28,12 @@ export const DeveloperSection = () => {
             <div className="flex flex-col items-center md:items-start">
               {/* 写真 */}
               <div className="w-full max-w-sm mb-8">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center">
-                  <span className="text-white text-6xl font-bold">佐藤</span>
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src="/images/sato-yasuyuki.png"
+                    alt="佐藤康行氏のプロフィール写真"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -37,11 +42,17 @@ export const DeveloperSection = () => {
                 {books.map((book, index) => (
                   <div
                     key={index}
-                    className="w-28 h-40 rounded-lg overflow-hidden shadow-md bg-gradient-to-br from-accent-pink to-accent-blue flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                    className="w-28 h-40 rounded-lg overflow-hidden shadow-md bg-white hover:scale-105 transition-transform duration-300"
                   >
-                    <span className="text-white text-xs font-bold text-center px-2">
-                      {book.title}
-                    </span>
+                    <img
+                      src={book.image}
+                      alt={book.title}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        console.error('Image failed to load:', book.image);
+                        e.target.style.display = 'none';
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -98,27 +109,80 @@ export const DeveloperSection = () => {
               佐藤康行氏の「満月瞑想」を体験してみませんか？
             </h3>
 
-            {/* 動画埋め込み */}
+            {/* 満月瞑想画像リンク */}
             <div className="max-w-3xl mx-auto mb-8">
-              <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-xl">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-2xl"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="満月瞑想 - 佐藤康行"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+              <a
+                href="https://pay.ioe.jp/mmst_0821_limited-release/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:opacity-90 transition-opacity duration-300"
+              >
+                <img
+                  src="/images/mangetsu-meditation-start.png"
+                  alt="満月瞑想スタートエディション - クリックして詳細を見る"
+                  className="w-full rounded-2xl shadow-xl"
+                />
+              </a>
             </div>
 
-            {/* 動画説明 */}
-            <div className="max-w-3xl mx-auto bg-gradient-to-r from-accent-pink to-accent-blue bg-opacity-20 rounded-2xl p-8 text-center">
-              <p className="text-base text-gray-800 leading-relaxed">
-                満月瞑想は、佐藤康行氏が開発した心を整える瞑想法です。<br />
-                <br />
-                1日5分、満月をイメージしながら、心の奥深くにある「本当の自分」と出会う時間。
-              </p>
+            {/* 瞑想説明 */}
+            <div className="max-w-3xl mx-auto bg-gradient-to-r from-accent-pink to-accent-blue bg-opacity-20 rounded-2xl p-8">
+              <div className="text-base text-gray-800 leading-relaxed space-y-4">
+                <p className="font-bold text-lg text-gray-900">
+                  今、あなたはどんな心で毎日をすごしているでしょうか。<br />
+                  愛と喜びと感謝にあふれて「本当の自分」で生きていけたらいいと思っていても
+                </p>
+                <p>
+                  過去のトラウマを思い出して心が苦しくなったり<br />
+                  誰かの一言で傷ついて落ち込んだり<br />
+                  人を責め、自分を責めて辛くなったり<br />
+                  そんな心が出てくることはないでしょうか。
+                </p>
+                <p className="font-bold text-lg text-gray-900">
+                  「満月瞑想」は、このような欠けた部分を消そうとするのではなく<br />
+                  その"陰"さえ光に変えることで<br />
+                  「満月」のように完全に満たされた心になれる瞑想法です。
+                </p>
+                <p>
+                  一般的な瞑想が「心を静める」ものだとしたら、満月瞑想は<strong className="font-bold text-gray-900">「心を満たす」</strong>瞑想法です。<br />
+                  「満月瞑想」は、雑念や感情を「手放そう」とするのではなく、それらを利用して深く瞑想に入ります。多くの瞑想とは一線を画します。<br />
+                  良かったことも、過去の辛かったことも、すべてを「おかげさま」にすることができ、「満月の心」を開いていきます。
+                </p>
+                <p className="font-bold text-lg text-gray-900">
+                  「満月瞑想」であなたの手に入るもの、
+                </p>
+                <p>
+                  <strong className="font-bold text-gray-900">それは、一時的な安らぎではなく、世界の見え方そのものの変化です。</strong><br />
+                  過去の苦しみも、現在の逆境も、すべてを「おかげさま」として<br />
+                  <strong className="font-bold text-gray-900">「満月の視点」</strong>で捉えることができれば、人生の達人になれます。
+                </p>
+                <p>
+                  これは、努力のいらない世界です。
+                </p>
+                <p>
+                  なぜなら、あなたは<strong className="font-bold text-gray-900">「もともと満月」</strong>だからです。<br />
+                  三日月という月はありません。月はもともと「まんまる」です。<br />
+                  あなたは、そのことに気づいていけばいいだけなのです。
+                </p>
+                <p className="font-bold text-lg text-gray-900">
+                  「満月瞑想」は、毎日続けていくことで、自分も、他人も、過去も、すべてを「満月」として、"まるごと光"にすることができる瞑想法です。
+                </p>
+                <p>
+                  この「満月瞑想スタートエディション」を活用して<br />
+                  「満月瞑想」をあなたの人生に活かしていってください。
+                </p>
+                <p className="text-xs text-gray-600 mt-6 pt-4 border-t border-gray-300">
+                  【無料公開】『満月瞑想スタートエディション』視聴ページより<br />
+                  <a
+                    href="https://pay.ioe.jp/mmst_0821_limited-release/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline text-gray-600"
+                  >
+                    https://pay.ioe.jp/mmst_0821_limited-release/
+                  </a>
+                </p>
+              </div>
             </div>
 
             {/* 公式サイトリンク */}
