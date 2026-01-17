@@ -105,26 +105,26 @@ export const BridgeSection = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-5 gap-8 md:gap-12 mb-16">
-            {/* 左側: 書籍画像 (40%) */}
-            <ScrollReveal delay={0.2} className="md:col-span-2">
-              <div className="flex flex-col items-center">
-                <div className="w-48 md:w-56 mb-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-16 items-start">
+            {/* 左側: 書籍画像 */}
+            <ScrollReveal delay={0.2}>
+              <div className="flex flex-col items-center md:items-start">
+                <div className="w-48 md:w-64 mb-6">
                   <img
                     src="/images/202402-monday-book.png"
                     alt="しんどい月曜日の朝がラクになる本"
                     className="w-full rounded-xl shadow-xl"
                   />
                 </div>
-                <p className="text-sm text-gray-600 text-center">
+                <p className="text-sm text-gray-600 text-center md:text-left">
                   佐藤康行 著<br />
                   サンマーク出版
                 </p>
               </div>
             </ScrollReveal>
 
-            {/* 右側: 手順説明 (60%) */}
-            <ScrollReveal delay={0.4} className="md:col-span-3">
+            {/* 右側: 手順説明 */}
+            <ScrollReveal delay={0.4}>
               <div className="space-y-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -158,14 +158,13 @@ export const BridgeSection = () => {
                   </ul>
                 </div>
 
-                {/* ノート画像プレースホルダー */}
-                <div className="bg-white rounded-xl p-8 shadow-md mt-8">
-                  <div className="bg-gradient-to-br from-primary-coral to-primary-peach rounded-lg h-48 flex items-center justify-center">
-                    <p className="text-white text-center">
-                      美点発見シート<br />
-                      イメージ画像
-                    </p>
-                  </div>
+                {/* 美点発見シート画像 */}
+                <div className="bg-white rounded-xl p-6 shadow-md mt-8">
+                  <img
+                    src="/images/biten_kakidasi_kami.png"
+                    alt="美点発見シート - 紙に書き出す例"
+                    className="w-full rounded-lg"
+                  />
                   <p className="text-xs text-gray-500 text-center mt-4">
                     ※ 書籍『しんどい月曜の朝がラクになる本』より引用
                   </p>
