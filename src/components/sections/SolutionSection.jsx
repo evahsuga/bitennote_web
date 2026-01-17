@@ -42,9 +42,11 @@ export const SolutionSection = () => {
                   </p>
                 </div>
                 <div className="relative">
-                  <div className="bg-white bg-opacity-20 rounded-2xl aspect-square flex items-center justify-center">
-                    <p className="text-white text-xl text-center">満月と三日月の図解</p>
-                  </div>
+                  <img
+                    src="/images/sato_満月三日月説明.png"
+                    alt="満月理論の図解 - 三日月として見るか満月として見るか"
+                    className="w-full rounded-2xl"
+                  />
                 </div>
               </div>
             </Card>
