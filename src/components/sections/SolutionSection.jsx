@@ -47,6 +47,18 @@ export const SolutionSection = () => {
                     alt="満月理論の図解 - 三日月として見るか満月として見るか"
                     className="w-full rounded-2xl"
                   />
+                  <p className="text-xs text-white text-opacity-80 mt-4 leading-relaxed">
+                    写真：開発者・佐藤康行（さとうやすゆき）<br />
+                    【無料公開】『満月瞑想スタートエディション』視聴ページより<br />
+                    <a
+                      href="https://pay.ioe.jp/mmst_0821_limited-release/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline text-white text-opacity-90"
+                    >
+                      https://pay.ioe.jp/mmst_0821_limited-release/
+                    </a>
+                  </p>
                 </div>
               </div>
             </Card>
