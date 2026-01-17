@@ -23,7 +23,7 @@ export const SolutionSection = () => {
         {/* 満月の図解 */}
         <ScrollReveal delay={0.2}>
           <div className="max-w-4xl mx-auto mb-20">
-            <Card className="gradient-cool p-12">
+            <Card className="bg-gradient-to-br from-pink-500 to-blue-500 p-12">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                   <h3 className="text-3xl font-bold mb-6 text-white">
