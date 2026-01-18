@@ -88,11 +88,49 @@ export const StepsSection = () => {
                     </div>
                   </div>
 
-                  {/* プレースホルダー画像 */}
+                  {/* 動画/プレースホルダー */}
                   <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                    <div className="bg-gradient-to-br from-primary-coral to-primary-peach rounded-2xl shadow-xl aspect-video flex items-center justify-center">
-                      <p className="text-white text-xl">ステップ{step.number}動画</p>
-                    </div>
+                    {step.number === "1" ? (
+                      <video
+                        controls
+                        muted
+                        poster="/videos/movstep1image.png"
+                        preload="metadata"
+                        playsInline
+                        className="w-full rounded-2xl shadow-xl"
+                      >
+                        <source src="/videos/movstep1.mp4" type="video/mp4" />
+                        お使いのブラウザは動画再生に対応していません。
+                      </video>
+                    ) : step.number === "2" ? (
+                      <video
+                        controls
+                        muted
+                        poster="/videos/movstep2image.png"
+                        preload="metadata"
+                        playsInline
+                        className="w-full rounded-2xl shadow-xl"
+                      >
+                        <source src="/videos/movstep2_1.mp4" type="video/mp4" />
+                        お使いのブラウザは動画再生に対応していません。
+                      </video>
+                    ) : step.number === "3" ? (
+                      <video
+                        controls
+                        muted
+                        poster="/videos/movstep3image.png"
+                        preload="metadata"
+                        playsInline
+                        className="w-full rounded-2xl shadow-xl"
+                      >
+                        <source src="/videos/movstep3.mp4" type="video/mp4" />
+                        お使いのブラウザは動画再生に対応していません。
+                      </video>
+                    ) : (
+                      <div className="bg-gradient-to-br from-primary-coral to-primary-peach rounded-2xl shadow-xl aspect-video flex items-center justify-center">
+                        <p className="text-white text-xl">ステップ{step.number}動画</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card>
