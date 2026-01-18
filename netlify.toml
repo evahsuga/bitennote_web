@@ -1,0 +1,16 @@
+# Netlify Build Configuration
+[build]
+  # ビルドコマンド
+  command = "npm run build"
+  # ビルド成果物のディレクトリ
+  publish = "dist"
+
+# SPA用のリダイレクト設定（すべてのルートをindex.htmlに転送）
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Node.jsバージョン指定（オプション）
+[build.environment]
+  NODE_VERSION = "20"
