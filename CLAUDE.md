@@ -111,13 +111,36 @@ Framer Motion使用:
 - `public/images/202510-mangetsu-counseling.png` - 書籍表紙（満月カウンセリング）
 - `public/images/mangetsu-meditation-start.png` - 満月瞑想紹介画像（リンク先: https://pay.ioe.jp/mmst_0821_limited-release/）
 
+**実装済み動画（StepsSection）:**
+- `public/videos/movstep1.mp4` (3.0MB) + `movstep1image.png` - Step1: 大切な人を登録
+- `public/videos/movstep2_1.mp4` (4.9MB) + `movstep2image.png` - Step2: 良いところを記録
+- `public/videos/movstep3.mp4` (2.6MB) + `movstep3image.png` - Step3: 振り返る、贈る
+
+**動画実装パターン:**
+```jsx
+<video
+  controls           // 再生コントロール表示
+  muted              // デフォルト無音
+  poster="/videos/movstep1image.png"  // サムネイル画像
+  preload="metadata" // メタデータのみ先読み（軽量化）
+  playsInline        // iOSでフルスクリーン強制回避
+  className="w-full rounded-2xl shadow-xl"
+>
+  <source src="/videos/movstep1.mp4" type="video/mp4" />
+</video>
+```
+
+**動画最適化:**
+- 推奨ファイルサイズ: 3〜5MB以下（モバイル対応）
+- FFmpegで圧縮: `ffmpeg -i input.mp4 -vcodec libx264 -crf 28 -preset slow output.mp4`
+- サムネイル画像（poster属性）で読み込み前の表示を最適化
+
 **プレースホルダー残り:**
 - ヒーロー動画エリア（右側）
-- 3ステップの操作動画（Step 1/2/3）
 - ユーザー体験談の写真（TestimonialsSection）
 
-**画像命名規則:**
-- 日本語ファイル名は一部ブラウザで読み込みエラーが発生するため、新規追加画像は英語ファイル名推奨
+**画像・動画命名規則:**
+- 日本語ファイル名は一部ブラウザで読み込みエラーが発生するため、新規追加ファイルは英語ファイル名推奨
 - 既存の日本語ファイル名（`sato_満月三日月説明.png`, `201610満月の法則.png`）は動作確認済み
 
 ### FAQ Section
