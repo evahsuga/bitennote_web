@@ -9,12 +9,17 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center gradient-warm overflow-hidden">
-      {/* 背景装飾 */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
-      </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* 夜空の背景画像 */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/night-sky-background.png)',
+        }}
+      />
+
+      {/* オーバーレイ（透明度20%で文字を読みやすく） */}
+      <div className="absolute inset-0 bg-black/20" />
 
       <Container className="relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -22,13 +27,13 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
             className="text-white"
           >
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
               className="text-sm md:text-base mb-6 font-medium"
             >
               佐藤康行氏の「満月理論」に基づく<br />
@@ -37,9 +42,9 @@ export const HeroSection = () => {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
               className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
             >
               あなたは、<br />
@@ -49,9 +54,9 @@ export const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
               className="text-lg md:text-xl mb-8 leading-relaxed"
             >
               そして、気づくのです。<br />
@@ -59,9 +64,9 @@ export const HeroSection = () => {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
+              transition={{ duration: 1.5, delay: 0.9, ease: "easeOut" }}
             >
               <Button size="large" onClick={scrollToSignup}>
                 今すぐ無料で始める
@@ -76,7 +81,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
           >
             <div className="bg-white bg-opacity-20 rounded-2xl shadow-2xl aspect-video flex items-center justify-center">
               <p className="text-white text-xl">ヒーロー動画エリア</p>
@@ -88,7 +93,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, repeat: Infinity, duration: 1.5 }}
+          transition={{ delay: 2.0, repeat: Infinity, duration: 1.5 }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-white">
