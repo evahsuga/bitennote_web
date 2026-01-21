@@ -13,8 +13,8 @@ export const ProblemSection = () => {
     <section className="py-20 md:py-32 bg-light-gray">
       <Container maxWidth="text">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            こんな悩み、ありませんか？
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-balance">
+            こんな悩み、<wbr />ありませんか？
           </h2>
         </ScrollReveal>
 
@@ -23,7 +23,7 @@ export const ProblemSection = () => {
             {problems.map((problem, index) => (
               <div key={index} className="flex items-start space-x-4">
                 <span className="text-4xl flex-shrink-0">😔</span>
-                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed break-keep">
                   {problem}
                 </p>
               </div>
@@ -32,8 +32,8 @@ export const ProblemSection = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.4}>
-          <p className="text-center text-gray-500 text-sm mt-12">
-            もし、一つでも当てはまるなら、<br />
+          <p className="text-center text-gray-500 text-sm mt-12 break-keep">
+            もし、<wbr />一つでも当てはまるなら、<br />
             このアプリがお役に立てるかもしれません。
           </p>
         </ScrollReveal>

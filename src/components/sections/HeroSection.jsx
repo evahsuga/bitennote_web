@@ -34,22 +34,22 @@ export const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-              className="text-sm md:text-base mb-6 font-medium"
+              className="text-sm md:text-base mb-6 font-medium break-keep"
             >
               佐藤康行氏の「満月理論」に基づく<br />
-              50万人が体験したメソッドを、<br />
-              今日から、あなたのスマホで。
+              50万人が体験したメソッドを、<wbr />
+              今日から、<wbr />あなたのスマホで。
             </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-bold mb-8 leading-tight"
+              className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-balance"
             >
-              あなたは、<br />
-              大切な人の<br />
-              「本当の姿」を<br />
+              あなたは、<wbr />
+              大切な人の<wbr />
+              「本当の姿」を<wbr />
               見ていますか？
             </motion.h1>
 
@@ -57,9 +57,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
-              className="text-lg md:text-xl mb-8 leading-relaxed"
+              className="text-lg md:text-xl mb-8 leading-relaxed break-keep"
             >
-              そして、気づくのです。<br />
+              そして、<wbr />気づくのです。<br />
               すべての人が「満月」であることに。
             </motion.p>
 
@@ -71,7 +71,7 @@ export const HeroSection = () => {
               <Button size="large" onClick={scrollToSignup}>
                 今すぐ無料で始める
               </Button>
-              <p className="text-sm mt-4 opacity-90">
+              <p className="text-sm mt-4 opacity-90 break-keep">
                 ✓ 完全無料　✓ 1分で登録　✓ 広告なし
               </p>
             </motion.div>
@@ -84,7 +84,7 @@ export const HeroSection = () => {
             transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
           >
             <div className="bg-white bg-opacity-20 rounded-2xl shadow-2xl aspect-video flex items-center justify-center">
-              <p className="text-white text-xl">ヒーロー動画エリア</p>
+              <p className="text-white text-xl break-keep">ヒーロー動画エリア</p>
             </div>
           </motion.div>
         </div>

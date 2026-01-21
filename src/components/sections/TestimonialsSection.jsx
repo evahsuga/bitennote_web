@@ -81,11 +81,11 @@ export const TestimonialsSection = () => {
     <section className="py-20 md:py-32 bg-light-gray">
       <Container>
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-balance">
             実際に使っている方の声
           </h2>
-          <p className="text-base text-center text-gray-600 mb-16">
-            美点発見noteを使い始めた方々から、温かいメッセージが届いています。
+          <p className="text-base text-center text-gray-600 mb-16 break-keep">
+            美点発見noteを使い始めた方々から、<wbr />温かいメッセージが届いています。
           </p>
         </ScrollReveal>
 
@@ -103,7 +103,7 @@ export const TestimonialsSection = () => {
                 </div>
 
                 {/* 引用 */}
-                <h3 className="text-xl font-bold text-primary-coral text-center mb-4 leading-relaxed">
+                <h3 className="text-xl font-bold text-primary-coral text-center mb-4 leading-relaxed text-balance">
                   {testimonial.quote}
                 </h3>
 
@@ -111,7 +111,7 @@ export const TestimonialsSection = () => {
                 <div className="w-16 h-0.5 bg-gray-300 mx-auto mb-4"></div>
 
                 {/* 本文 */}
-                <p className="text-sm text-gray-600 leading-relaxed mb-6 whitespace-pre-line flex-grow">
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 whitespace-pre-line flex-grow break-keep">
                   {testimonial.content}
                 </p>
 
@@ -120,10 +120,10 @@ export const TestimonialsSection = () => {
 
                 {/* 名前・情報 */}
                 <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-800 whitespace-pre-line">
+                  <p className="text-sm font-semibold text-gray-800 whitespace-pre-line break-keep">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-gray-600 whitespace-pre-line mt-1">
+                  <p className="text-xs text-gray-600 whitespace-pre-line mt-1 break-keep">
                     {testimonial.info}
                   </p>
                 </div>
@@ -133,7 +133,7 @@ export const TestimonialsSection = () => {
         </div>
 
         <ScrollReveal delay={0.6}>
-          <p className="text-xs text-gray-500 text-center mt-8">
+          <p className="text-xs text-gray-500 text-center mt-8 break-keep">
             ※ ご本人の許可を得て掲載しています
           </p>
         </ScrollReveal>

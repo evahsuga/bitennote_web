@@ -38,5 +38,21 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // 日本語改行最適化のユーティリティを追加
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-balance': {
+          'text-wrap': 'balance',
+        },
+        '.break-keep': {
+          'word-break': 'keep-all',
+          'overflow-wrap': 'break-word',
+        },
+        '.no-break': {
+          'white-space': 'nowrap',
+        },
+      });
+    },
+  ],
 }

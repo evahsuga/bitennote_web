@@ -15,10 +15,31 @@
   body {
     @apply font-sans text-text-dark bg-white;
     @apply leading-relaxed;
+
+    /* 日本語改行の最適化 */
+    word-break: keep-all;        /* 単語の途中で改行しない */
+    overflow-wrap: break-word;   /* 長い単語は改行する */
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading leading-heading;
+
+    /* 見出しの改行を美しく */
+    text-wrap: balance;          /* 改行位置を自動調整（最新CSS） */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  p {
+    /* 段落の改行を最適化 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  button, a {
+    /* ボタン・リンク内の改行を防ぐ */
+    white-space: normal;         /* デフォルトでは通常 */
+    word-break: keep-all;
   }
 }
 
@@ -31,7 +52,17 @@
     background: linear-gradient(135deg, #FEC8D8 0%, #C3ECFA 100%);
   }
 
+  /* 改行制御用のユーティリティ */
   .text-balance {
     text-wrap: balance;
+  }
+
+  .break-keep {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .no-break {
+    white-space: nowrap;
   }
 }

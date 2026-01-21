@@ -35,7 +35,7 @@ export const FAQSection = () => {
     <section className="py-20 md:py-32">
       <Container maxWidth="text">
         <ScrollReveal>
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-balance">
             よくある質問
           </h2>
         </ScrollReveal>
@@ -46,7 +46,7 @@ export const FAQSection = () => {
               <Card hover={false} className="cursor-pointer">
                 <div onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                   <div className="flex justify-between items-center">
-                    <h3 className="text-xl font-bold pr-8">
+                    <h3 className="text-xl font-bold pr-8 text-balance">
                       Q{index + 1}. {faq.question}
                     </h3>
                     <motion.div
@@ -67,7 +67,7 @@ export const FAQSection = () => {
                         className="overflow-hidden"
                       >
                         <div className="pt-6 border-t border-gray-200 mt-6">
-                          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                          <p className="text-gray-700 leading-relaxed whitespace-pre-line break-keep">
                             {faq.answer}
                           </p>
                         </div>

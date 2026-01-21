@@ -38,9 +38,9 @@ export const StepsSection = () => {
       <Container>
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              使い方は、とってもシンプル。<br />
-              たった3ステップで、習慣が始まります。
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
+              使い方は、<wbr />とってもシンプル。<br />
+              たった3ステップで、<wbr />習慣が始まります。
             </h2>
           </div>
         </ScrollReveal>
@@ -59,11 +59,11 @@ export const StepsSection = () => {
                       <div className="text-4xl">{step.icon}</div>
                     </div>
 
-                    <h3 className="text-3xl font-bold mb-4">
+                    <h3 className="text-3xl font-bold mb-4 text-balance">
                       {step.title}
                     </h3>
 
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6">
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6 break-keep">
                       {step.description}
                     </p>
 
@@ -75,11 +75,11 @@ export const StepsSection = () => {
                           {Array.isArray(step.tips) ? (
                             <ul className="space-y-2">
                               {step.tips.map((tip, i) => (
-                                <li key={i} className="text-gray-700">{tip}</li>
+                                <li key={i} className="text-gray-700 break-keep">{tip}</li>
                               ))}
                             </ul>
                           ) : (
-                            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                            <p className="text-gray-700 leading-relaxed whitespace-pre-line break-keep">
                               {step.tips}
                             </p>
                           )}
@@ -128,7 +128,7 @@ export const StepsSection = () => {
                       </video>
                     ) : (
                       <div className="bg-gradient-to-br from-primary-coral to-primary-peach rounded-2xl shadow-xl aspect-video flex items-center justify-center">
-                        <p className="text-white text-xl">ステップ{step.number}動画</p>
+                        <p className="text-white text-xl break-keep">ステップ{step.number}動画</p>
                       </div>
                     )}
                   </div>
@@ -142,19 +142,19 @@ export const StepsSection = () => {
         <ScrollReveal delay={0.6}>
           <div className="mt-20 max-w-3xl mx-auto">
             <Card className="bg-gradient-to-br from-pink-500 to-blue-500 text-white text-center p-12">
-              <h3 className="text-3xl font-bold mb-6">
+              <h3 className="text-3xl font-bold mb-6 text-balance">
                 💻 複数のデバイスで使える
               </h3>
-              <p className="text-lg leading-relaxed mb-6">
+              <p className="text-lg leading-relaxed mb-6 break-keep">
                 スマホで記録 → PCで確認<br />
                 PCで記録 → スマホで確認<br />
                 <br />
-                自動で同期されるので、<br />
-                いつでも、どこでも、<br />
+                自動で同期されるので、<wbr />
+                いつでも、<wbr />どこでも、<wbr />
                 あなたの美点発見が続きます。
               </p>
-              <p className="text-base opacity-90">
-                オフラインでも記録可能。<br />
+              <p className="text-base opacity-90 break-keep">
+                オフラインでも記録可能。<wbr />
                 オンラインに戻ると自動で同期。
               </p>
             </Card>

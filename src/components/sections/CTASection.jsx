@@ -21,20 +21,20 @@ export const CTASection = () => {
           className="text-center text-white"
         >
           <div className="border-t-2 border-b-2 border-white border-opacity-30 py-8 mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              さあ、今日から始めましょう。
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-balance">
+              さあ、<wbr />今日から始めましょう。
             </h2>
-            <p className="text-xl md:text-2xl">
-              あなたの人生を、<br className="md:hidden" />
-              明るく変える、その第一歩を。
+            <p className="text-xl md:text-2xl break-keep">
+              あなたの人生を、<wbr />
+              明るく変える、<wbr />その第一歩を。
             </p>
           </div>
 
-          <p className="text-lg md:text-xl mb-8">
-            50万人が、<br className="md:hidden" />
+          <p className="text-lg md:text-xl mb-8 break-keep">
+            50万人が、<wbr />
             すでにこの一歩を踏み出しました。<br />
             <br />
-            あなたも、仲間に加わりませんか？
+            あなたも、<wbr />仲間に加わりませんか？
           </p>
 
           <motion.div
@@ -56,16 +56,16 @@ export const CTASection = () => {
           </motion.div>
 
           <div className="text-base mb-12 space-y-2">
-            <p>✓ 完全無料</p>
-            <p>✓ 1分で登録</p>
-            <p>✓ 広告なし</p>
+            <p className="break-keep">✓ 完全無料</p>
+            <p className="break-keep">✓ 1分で登録</p>
+            <p className="break-keep">✓ 広告なし</p>
           </div>
 
           <div className="border-t-2 border-white border-opacity-30 pt-8">
-            <p className="text-xl md:text-2xl leading-relaxed">
-              もう、迷わなくていいんです。<br />
+            <p className="text-xl md:text-2xl leading-relaxed break-keep">
+              もう、<wbr />迷わなくていいんです。<br />
               <br />
-              あなたの人生は、今日から変わります。
+              あなたの人生は、<wbr />今日から変わります。
             </p>
           </div>
         </motion.div>
