@@ -2,10 +2,18 @@ import React from 'react';
 import { Container } from '../layout/Container';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { Card } from '../ui/Card';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Swiper スタイル
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const TestimonialsSection = () => {
   const testimonials = [
     {
+      id: 1,
       photo: '/images/testimonials/user1.jpg',
       quote: '美点発見を始めて、人生が変わりました。',
       content: `以前は、職場の人間関係に悩んでいました。
@@ -21,9 +29,11 @@ export const TestimonialsSection = () => {
 
 美点発見は、人間関係を変える魔法のようなツールです。`,
       name: 'A.Tさん',
-      info: '28歳・会社員\n東京都'
+      age: '28歳・会社員',
+      location: '東京都',
     },
     {
+      id: 2,
       photo: '/images/testimonials/user2.jpg',
       quote: 'パートナーとの関係が、劇的に変わりました。',
       content: `結婚5年目。
@@ -45,9 +55,11 @@ export const TestimonialsSection = () => {
 
 夫も嬉しそうで、私たちの関係は、以前よりずっと良くなっています。`,
       name: 'M.Kさん',
-      info: '32歳・主婦\n神奈川県'
+      age: '32歳・主婦',
+      location: '神奈川県',
     },
     {
+      id: 3,
       photo: '/images/testimonials/user3.jpg',
       quote: '苦手だった先輩と、話せるようになりました。',
       content: `入社2年目。
@@ -73,7 +85,8 @@ export const TestimonialsSection = () => {
 
 苦手だと思っていたのは、私の「見方」が原因だったんだと気づきました。`,
       name: 'Y.Sさん',
-      info: '25歳・事務職\n大阪府'
+      age: '25歳・事務職',
+      location: '大阪府',
     },
   ];
 
@@ -89,54 +102,105 @@ export const TestimonialsSection = () => {
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <ScrollReveal key={index} delay={index * 0.2}>
-              <Card className="flex flex-col h-full">
-                {/* 写真 */}
-                <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 rounded-full overflow-hidden shadow-md bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center">
-                    <span className="text-white text-2xl font-bold">
-                      {testimonial.name.charAt(0)}
-                    </span>
-                  </div>
-                </div>
+        <ScrollReveal delay={0.2}>
+          <div className="testimonials-swiper-container">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
 
-                {/* 引用 */}
-                <h3 className="text-xl font-bold text-primary-coral text-center mb-4 leading-relaxed text-balance">
-                  {testimonial.quote}
-                </h3>
+              // 左右ボタン（デスクトップのみ）
+              navigation
 
-                {/* 境界線 */}
-                <div className="w-16 h-0.5 bg-gray-300 mx-auto mb-4"></div>
+              // インジケーター（ドット・クリック可能）
+              pagination={{
+                clickable: true,
+                dynamicBullets: false,
+              }}
 
-                {/* 本文 */}
-                <p className="text-sm text-gray-600 leading-relaxed mb-6 whitespace-pre-line flex-grow break-keep">
-                  {testimonial.content}
-                </p>
+              // オートプレイ（5秒ごと）
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
 
-                {/* 境界線 */}
-                <div className="w-16 h-0.5 bg-gray-300 mx-auto mb-4"></div>
+              // ループ（無限スクロール）
+              loop={true}
 
-                {/* 名前・情報 */}
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-800 whitespace-pre-line break-keep">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-gray-600 whitespace-pre-line mt-1 break-keep">
-                    {testimonial.info}
-                  </p>
-                </div>
-              </Card>
-            </ScrollReveal>
-          ))}
-        </div>
+              // スワイプの滑らかさ
+              speed={600}
 
-        <ScrollReveal delay={0.6}>
-          <p className="text-xs text-gray-500 text-center mt-8 break-keep">
-            ※ ご本人の許可を得て掲載しています
-          </p>
+              // カード間のスペース
+              spaceBetween={24}
+
+              // ピークアウト（モバイルで次のカードが少し見える）
+              slidesPerView={1.1}
+              centeredSlides={true}
+
+              // レスポンシブ対応
+              breakpoints={{
+                768: {
+                  slidesPerView: 1,
+                  centeredSlides: false,
+                },
+              }}
+
+              // アクセシビリティ
+              a11y={{
+                prevSlideMessage: '前の体験談',
+                nextSlideMessage: '次の体験談',
+                paginationBulletMessage: '体験談 {{index}} に移動',
+              }}
+            >
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.id}>
+                  <Card hover={false} className="h-full">
+                    {/* 写真（プレースホルダー） */}
+                    <div className="flex justify-center mb-6">
+                      <div className="w-20 h-20 rounded-full overflow-hidden shadow-md bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center">
+                        <span className="text-white text-2xl font-bold">
+                          {testimonial.name.charAt(0)}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 引用（短文） */}
+                    <h3 className="text-xl md:text-2xl font-bold text-primary-coral text-center mb-4 leading-relaxed text-balance">
+                      {testimonial.quote}
+                    </h3>
+
+                    {/* 境界線 */}
+                    <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-4" />
+
+                    {/* 体験談本文 */}
+                    <p className="text-sm text-gray-600 leading-relaxed mb-6 break-keep whitespace-pre-line">
+                      {testimonial.content}
+                    </p>
+
+                    {/* 境界線 */}
+                    <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-4" />
+
+                    {/* 名前・情報 */}
+                    <div className="text-center">
+                      <p className="font-semibold text-gray-800">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {testimonial.age}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {testimonial.location}
+                      </p>
+                    </div>
+                  </Card>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </ScrollReveal>
+
+        <p className="text-center text-gray-500 text-sm mt-12 break-keep">
+          ※ ご本人の許可を得て掲載しています
+        </p>
       </Container>
     </section>
   );
