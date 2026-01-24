@@ -406,7 +406,8 @@ export const BridgeSection = () => {
             </div>
           </ScrollReveal>
 
-          {/* 比較表 3カラム */}
+          {/* 比較表 3カラム - 一時非表示（コンテンツ整理のため） */}
+          {/*
           <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
             <ScrollReveal delay={1.2}>
               <Card className="bg-white">
@@ -472,6 +473,7 @@ export const BridgeSection = () => {
               </Card>
             </ScrollReveal>
           </div>
+          */}
 
           <ScrollReveal delay={1.8}>
             <div className="text-center max-w-3xl mx-auto">
