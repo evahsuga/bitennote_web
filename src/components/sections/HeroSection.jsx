@@ -22,78 +22,65 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-black/20" />
 
       <Container className="relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* 左側: テキスト */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="text-white"
+        {/* テキストコンテンツ（中央揃え） */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3.0, ease: "easeOut" }}
+          className="text-white text-center max-w-4xl mx-auto"
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3.0, delay: 0.6, ease: "easeOut" }}
+            className="text-sm md:text-base mb-6 font-medium break-keep"
           >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-              className="text-sm md:text-base mb-6 font-medium break-keep"
-            >
-              佐藤康行氏の「満月理論」に基づく<br />
-              50万人が体験したメソッドを、<wbr />
-              今日から、<wbr />あなたのスマホで。
-            </motion.p>
+            佐藤康行氏の「満月理論」に基づく<br />
+            50万人が体験したメソッドを、<wbr />
+            今日から、<wbr />あなたのスマホで。
+          </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-balance"
-            >
-              あなたは、<wbr />
-              大切な人の<wbr />
-              「本当の姿」を<wbr />
-              見ていますか？
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
-              className="text-lg md:text-xl mb-8 leading-relaxed break-keep"
-            >
-              そして、<wbr />気づくのです。<br />
-              すべての人が「満月」であることに。
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.9, ease: "easeOut" }}
-            >
-              <Button size="large" onClick={scrollToSignup}>
-                今すぐ無料で始める
-              </Button>
-              <p className="text-sm mt-4 opacity-90 break-keep">
-                ✓ 完全無料　✓ 1分で登録　✓ 広告なし
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* 右側: プレースホルダー画像 */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 3.0, delay: 1.0, ease: "easeOut" }}
+            className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-balance"
           >
-            <div className="bg-white bg-opacity-20 rounded-2xl shadow-2xl aspect-video flex items-center justify-center">
-              <p className="text-white text-xl break-keep">ヒーロー動画エリア</p>
-            </div>
+            あなたは、<wbr />
+            大切な人の<wbr />
+            「本当の姿」を<wbr />
+            見ていますか？
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 3.0, delay: 1.4, ease: "easeOut" }}
+            className="text-lg md:text-xl mb-8 leading-relaxed break-keep"
+          >
+            そして、<wbr />気づくのです。<br />
+            すべての人が「満月」であることに。
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 3.0, delay: 1.8, ease: "easeOut" }}
+          >
+            <Button size="large" onClick={scrollToSignup}>
+              今すぐ無料で始める
+            </Button>
+            <p className="text-sm mt-4 opacity-90 break-keep">
+              ✓ 完全無料　✓ 1分で登録　✓ 広告なし
+            </p>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* スクロール促進 */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.0, repeat: Infinity, duration: 1.5 }}
+          transition={{ delay: 4.0, repeat: Infinity, duration: 1.5 }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-white">
