@@ -133,15 +133,11 @@ export const BridgeSection = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">2️⃣</span>
-                    <p className="text-lg text-gray-800 pt-1">相手の名前と写真を貼る</p>
+                    <p className="text-lg text-gray-800 pt-1">相手の名前を書く</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">3️⃣</span>
                     <p className="text-lg text-gray-800 pt-1">良いところを書き出す</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-2xl">4️⃣</span>
-                    <p className="text-lg text-gray-800 pt-1">毎日追加していく</p>
                   </div>
                 </div>
 
@@ -154,7 +150,6 @@ export const BridgeSection = () => {
                     <li>• 五感を使う</li>
                     <li>• 脳への刺激が強い</li>
                     <li>• 記憶に残る</li>
-                    <li>• 手書きの温もり</li>
                   </ul>
                 </div>
 
@@ -175,17 +170,10 @@ export const BridgeSection = () => {
 
           <ScrollReveal delay={0.6}>
             <div className="text-center max-w-3xl mx-auto">
-              <p className="text-base text-gray-700 leading-relaxed space-y-4">
-                <span className="block">
-                  実際、読書の研究では、<br />
-                  紙の書籍とデジタル書籍を比較した時、<br />
-                  紙の方が記憶に残りやすいという結果も出ています。
-                </span>
-                <span className="block mt-4">
-                  手で書く、写真を貼る。<br />
-                  そうした「アナログな行為」が、<br />
-                  脳に深く刻み込まれるのです。
-                </span>
+              <p className="text-base text-gray-700 leading-relaxed">
+                実際、読書の研究では、<br />
+                紙の書籍とデジタル書籍を比較した時、<br />
+                紙の方が記憶に残りやすいという結果も出ています。
               </p>
             </div>
           </ScrollReveal>
@@ -434,10 +422,6 @@ export const BridgeSection = () => {
                   <p className="flex items-start gap-2">
                     <span className="text-green-600 flex-shrink-0">✅</span>
                     <span>脳に刻まれる</span>
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="text-green-600 flex-shrink-0">✅</span>
-                    <span>手書きの温もり</span>
                   </p>
                   <div className="border-t border-gray-200 my-3"></div>
                   <p className="flex items-start gap-2">

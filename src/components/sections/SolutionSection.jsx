@@ -110,7 +110,8 @@ export const SolutionSection = () => {
           </div>
         </ScrollReveal>
 
-        {/* 実績 */}
+        {/* 実績 - 一時非表示（誇大広告的な印象を避けるため再検討中） */}
+        {/*
         <ScrollReveal delay={1.0}>
           <div className="mt-20 text-center">
             <h3 className="text-3xl font-bold mb-12 text-balance">
@@ -146,7 +147,6 @@ export const SolutionSection = () => {
               です。
             </p>
 
-            {/* CF根拠資料 */}
             <div className="mt-16 max-w-3xl mx-auto">
               <a
                 href="https://camp-fire.jp/projects/656368/view"
@@ -174,6 +174,7 @@ export const SolutionSection = () => {
             </div>
           </div>
         </ScrollReveal>
+        */}
       </Container>
     </section>
   );
