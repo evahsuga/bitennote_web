@@ -2,6 +2,13 @@ import React from 'react';
 import { Container } from '../layout/Container';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { Card } from '../ui/Card';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Swiper スタイル
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const StepsSection = () => {
   const steps = [
@@ -9,153 +16,141 @@ export const StepsSection = () => {
       number: "1",
       icon: "👤",
       title: "大切な人を登録",
-      description: "アプリを開いて、\n「👤 新しい人を追加」をタップ。\n\n名前を入力（例: たろうくん）\n写真を選択（任意）\n関係性（例: 友人）\n\n✨ 人数制限なし！何人でも登録できます。\n\nたった30秒で完了します。",
-      tips: "最初は、「一番身近な人」から始めるのがおすすめ。\n毎日会う人なら、美点を見つけやすいからです。"
+      description: "「新しい人を追加」をタップ。\n名前・写真・関係性を入力。\nたった30秒で完了。",
+      video: "/videos/movstep1.mp4",
+      poster: "/videos/movstep1image.png"
     },
     {
       number: "2",
       icon: "✍️",
       title: "良いところを記録",
-      description: "登録した人をタップして、\n「🖊️ 美点を追加」をタップ。\n\n良いところを、\n15文字程度の短いメモで記録。\n\n「今日、笑顔で挨拶してくれた」\n「困っている時、助けてくれた」\n「いつも優しい言葉をかけてくれる」\n\nどんな小さなことでも、OK。",
-      tips: [
-        "✅ 具体的な行動を書く",
-        "✅ 小さなことでもOK",
-        "✅ その日に気づいたことを記録",
-        "✅ ポジティブな表現を使う"
-      ]
+      description: "登録した人をタップ。\n15文字程度の短いメモで記録。\nどんな小さなことでもOK。",
+      video: "/videos/movstep2_1.mp4",
+      poster: "/videos/movstep2image.png"
     },
     {
       number: "3",
       icon: "📖",
       title: "振り返る、贈る",
-      description: "記録した美点は、\nLINE風のチャット形式で、\nいつでも振り返ることができます。\n\n「こんなにたくさん、\n 良いところがあったんだ」\n\nその実感が、\nあなたの心を、じんわりと満たします。\n\nそして、PDFで出力して、\n相手にプレゼントすることも。",
-      tips: "1週間続けると → 見方が変わる\n1ヶ月続けると → 習慣になる\n3ヶ月続けると → 世界が変わる"
+      description: "チャット形式で振り返り。\n心がじんわり満たされる。\nPDFでプレゼントも可能。",
+      video: "/videos/movstep3.mp4",
+      poster: "/videos/movstep3image.png"
     },
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-light-gray">
+    <section className="py-16 md:py-24 bg-light-gray">
       <Container>
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
-              使い方は、<wbr />とってもシンプル。<br />
-              たった3ステップで、<wbr />習慣が始まります。
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-balance">
+              携帯用・美点発見noteの使い方
             </h2>
+            <p className="text-lg text-gray-600">
+              たった3ステップで、習慣が始まります
+            </p>
           </div>
         </ScrollReveal>
 
-        <div className="space-y-20">
-          {steps.map((step, index) => (
-            <ScrollReveal key={index} delay={index * 0.2}>
-              <Card className="overflow-hidden">
-                <div className={`grid md:grid-cols-2 gap-8 items-center`}>
-                  {/* テキスト */}
-                  <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full gradient-warm flex items-center justify-center text-white text-2xl font-bold">
+        {/* 目次 */}
+        <ScrollReveal delay={0.1}>
+          <div className="flex justify-center gap-4 md:gap-8 mb-8">
+            {steps.map((step) => (
+              <div key={step.number} className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full gradient-warm flex items-center justify-center text-white text-sm font-bold">
+                  {step.number}
+                </div>
+                <span className="text-sm md:text-base text-gray-700 font-medium hidden md:inline">
+                  {step.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        {/* Swiper スライド */}
+        <ScrollReveal delay={0.2}>
+          <div className="steps-swiper-container">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{
+                clickable: true,
+                dynamicBullets: false,
+              }}
+              autoplay={{
+                enabled: true,
+                delay: 6000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              loop={true}
+              speed={600}
+              spaceBetween={16}
+              slidesPerView={1.05}
+              centeredSlides={true}
+              breakpoints={{
+                768: {
+                  slidesPerView: 1,
+                  centeredSlides: false,
+                  spaceBetween: 24,
+                },
+              }}
+              a11y={{
+                prevSlideMessage: '前のステップ',
+                nextSlideMessage: '次のステップ',
+                paginationBulletMessage: 'ステップ {{index}} に移動',
+              }}
+            >
+              {steps.map((step) => (
+                <SwiperSlide key={step.number}>
+                  <Card hover={false} className="h-full">
+                    {/* ステップヘッダー */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full gradient-warm flex items-center justify-center text-white text-lg font-bold">
                         {step.number}
                       </div>
-                      <div className="text-4xl">{step.icon}</div>
+                      <span className="text-2xl">{step.icon}</span>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {step.title}
+                      </h3>
                     </div>
 
-                    <h3 className="text-3xl font-bold mb-4 text-balance">
-                      {step.title}
-                    </h3>
+                    {/* 動画 */}
+                    <div className="mb-4">
+                      <video
+                        controls
+                        muted
+                        poster={step.poster}
+                        preload="metadata"
+                        playsInline
+                        className="w-full max-h-48 md:max-h-64 object-contain rounded-xl shadow-md bg-black"
+                      >
+                        <source src={step.video} type="video/mp4" />
+                      </video>
+                    </div>
 
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6">
+                    {/* 説明 */}
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed whitespace-pre-line text-center">
                       {step.description}
                     </p>
+                  </Card>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </ScrollReveal>
 
-                    <div className="bg-accent-pink bg-opacity-20 rounded-xl p-6">
-                      <div className="flex items-start gap-3">
-                        <span className="text-2xl flex-shrink-0">💡</span>
-                        <div>
-                          <p className="font-semibold mb-2">ポイント：</p>
-                          {Array.isArray(step.tips) ? (
-                            <ul className="space-y-2">
-                              {step.tips.map((tip, i) => (
-                                <li key={i} className="text-gray-700">{tip}</li>
-                              ))}
-                            </ul>
-                          ) : (
-                            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                              {step.tips}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 動画/プレースホルダー */}
-                  <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                    {step.number === "1" ? (
-                      <video
-                        controls
-                        muted
-                        poster="/videos/movstep1image.png"
-                        preload="metadata"
-                        playsInline
-                        className="w-full rounded-2xl shadow-xl"
-                      >
-                        <source src="/videos/movstep1.mp4" type="video/mp4" />
-                        お使いのブラウザは動画再生に対応していません。
-                      </video>
-                    ) : step.number === "2" ? (
-                      <video
-                        controls
-                        muted
-                        poster="/videos/movstep2image.png"
-                        preload="metadata"
-                        playsInline
-                        className="w-full rounded-2xl shadow-xl"
-                      >
-                        <source src="/videos/movstep2_1.mp4" type="video/mp4" />
-                        お使いのブラウザは動画再生に対応していません。
-                      </video>
-                    ) : step.number === "3" ? (
-                      <video
-                        controls
-                        muted
-                        poster="/videos/movstep3image.png"
-                        preload="metadata"
-                        playsInline
-                        className="w-full rounded-2xl shadow-xl"
-                      >
-                        <source src="/videos/movstep3.mp4" type="video/mp4" />
-                        お使いのブラウザは動画再生に対応していません。
-                      </video>
-                    ) : (
-                      <div className="bg-gradient-to-br from-primary-coral to-primary-peach rounded-2xl shadow-xl aspect-video flex items-center justify-center">
-                        <p className="text-white text-xl">ステップ{step.number}動画</p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </Card>
-            </ScrollReveal>
-          ))}
-        </div>
-
-        {/* 複数デバイス対応 */}
-        <ScrollReveal delay={0.6}>
-          <div className="mt-20 max-w-3xl mx-auto">
-            <Card className="bg-gradient-to-br from-pink-500 to-blue-500 text-white text-center p-12">
-              <h3 className="text-3xl font-bold mb-6 text-balance">
-                💻 複数のデバイスで使える
+        {/* 複数デバイス対応 - コンパクト版 */}
+        <ScrollReveal delay={0.4}>
+          <div className="mt-12 max-w-2xl mx-auto">
+            <Card className="bg-gradient-to-br from-pink-500 to-blue-500 text-white text-center p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-3">
+                💻 複数デバイスで同期
               </h3>
-              <p className="text-lg leading-relaxed mb-6">
-                スマホで記録 → PCで確認<br />
-                PCで記録 → スマホで確認<br />
-                <br />
-                自動で同期されるので、<wbr />
-                いつでも、<wbr />どこでも、<wbr />
-                あなたの美点発見が続きます。
-              </p>
-              <p className="text-base opacity-90">
-                オフラインでも記録可能。<wbr />
-                オンラインに戻ると自動で同期。
+              <p className="text-sm md:text-base leading-relaxed">
+                スマホ・PC間で自動同期。<br />
+                オフラインでも記録可能。
               </p>
             </Card>
           </div>

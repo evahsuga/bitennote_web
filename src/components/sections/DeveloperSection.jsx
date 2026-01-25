@@ -129,16 +129,6 @@ export const DeveloperSection = () => {
             <div className="max-w-3xl mx-auto bg-gradient-to-r from-accent-pink to-accent-blue bg-opacity-20 rounded-2xl p-8">
               <div className="text-base text-gray-800 leading-relaxed space-y-4">
                 <p className="font-bold text-lg text-gray-900">
-                  今、あなたはどんな心で毎日をすごしているでしょうか。<br />
-                  愛と喜びと感謝にあふれて「本当の自分」で生きていけたらいいと思っていても
-                </p>
-                <p>
-                  過去のトラウマを思い出して心が苦しくなったり<br />
-                  誰かの一言で傷ついて落ち込んだり<br />
-                  人を責め、自分を責めて辛くなったり<br />
-                  そんな心が出てくることはないでしょうか。
-                </p>
-                <p className="font-bold text-lg text-gray-900">
                   「満月瞑想」は、このような欠けた部分を消そうとするのではなく<br />
                   その"陰"さえ光に変えることで<br />
                   「満月」のように完全に満たされた心になれる瞑想法です。
@@ -160,16 +150,7 @@ export const DeveloperSection = () => {
                   これは、努力のいらない世界です。
                 </p>
                 <p>
-                  なぜなら、あなたは<strong className="font-bold text-gray-900">「もともと満月」</strong>だからです。<br />
-                  三日月という月はありません。月はもともと「まんまる」です。<br />
-                  あなたは、そのことに気づいていけばいいだけなのです。
-                </p>
-                <p className="font-bold text-lg text-gray-900">
-                  「満月瞑想」は、毎日続けていくことで、自分も、他人も、過去も、すべてを「満月」として、"まるごと光"にすることができる瞑想法です。
-                </p>
-                <p>
-                  この「満月瞑想スタートエディション」を活用して<br />
-                  「満月瞑想」をあなたの人生に活かしていってください。
+                  なぜなら、あなたは<strong className="font-bold text-gray-900">「もともと満月」</strong>だからです。
                 </p>
                 <p className="text-xs text-gray-600 mt-6 pt-4 border-t border-gray-300">
                   【無料公開】『満月瞑想スタートエディション』視聴ページより<br />

@@ -165,3 +165,71 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+/* Steps Swiper カスタムスタイル */
+.steps-swiper-container {
+  position: relative;
+  padding: 0 60px;
+}
+
+@media (max-width: 767px) {
+  .steps-swiper-container {
+    padding: 0;
+  }
+}
+
+.steps-swiper-container .swiper-button-prev,
+.steps-swiper-container .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.steps-swiper-container .swiper-button-prev:hover,
+.steps-swiper-container .swiper-button-next:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.steps-swiper-container .swiper-button-prev::after,
+.steps-swiper-container .swiper-button-next::after {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FF9A9E;
+}
+
+@media (max-width: 767px) {
+  .steps-swiper-container .swiper-button-prev,
+  .steps-swiper-container .swiper-button-next {
+    display: none;
+  }
+}
+
+.steps-swiper-container .swiper-pagination {
+  position: static;
+  margin-top: 24px;
+}
+
+.steps-swiper-container .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #E5E5E5;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.steps-swiper-container .swiper-pagination-bullet-active {
+  background: #FF9A9E;
+  transform: scale(1.2);
+}
+
+.steps-swiper-container .swiper-slide {
+  height: auto;
+}
+
+.steps-swiper-container .swiper-slide > div {
+  height: 100%;
+}

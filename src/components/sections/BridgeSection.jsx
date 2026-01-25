@@ -321,46 +321,18 @@ export const BridgeSection = () => {
             </div>
           </ScrollReveal>
 
-          {/* 課題カード 2カラム */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-            <ScrollReveal delay={0.4}>
-              <Card className="bg-white">
-                <div className="space-y-4 text-gray-700">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">📷</span>
-                    <p className="text-lg">写真を印刷する</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">💰</span>
-                    <p className="text-lg">コストがかかる</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">📓</span>
-                    <p className="text-lg">持ち歩きにくい</p>
-                  </div>
+          {/* 課題カード */}
+          <ScrollReveal delay={0.4}>
+            <div className="max-w-md mx-auto mb-12">
+              <Card className="bg-white text-center">
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-lg">写真を印刷、切り貼りする</p>
+                  <p className="text-lg">小さな手間に、つい後回し</p>
+                  <p className="text-lg font-semibold text-primary-coral">小さなハードルが大きな壁に</p>
                 </div>
               </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.6}>
-              <Card className="bg-white">
-                <div className="space-y-4 text-gray-700">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">🕐</span>
-                    <p className="text-lg">手間がかかる</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">⏰</span>
-                    <p className="text-lg">時間がかかる</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">💼</span>
-                    <p className="text-lg">ノリで貼る作業が大変</p>
-                  </div>
-                </div>
-              </Card>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal delay={0.8}>
             <div className="text-center mb-16">
@@ -378,7 +350,7 @@ export const BridgeSection = () => {
               <div className="text-center space-y-6 text-gray-800">
                 <p className="text-2xl md:text-3xl font-bold">だから、</p>
                 <p className="text-3xl md:text-4xl font-bold text-primary-coral">
-                  「美点発見note アプリ版」
+                  「美点発見note 携帯アプリ版」
                 </p>
                 <p className="text-2xl md:text-3xl font-bold">を開発しました。</p>
 
@@ -392,15 +364,14 @@ export const BridgeSection = () => {
                   <p className="font-bold">でも、</p>
                   <p>
                     スマホで、いつでも、どこでも、<br />
-                    美点発見を続けられる。
+                    美点発見を続けられる。<br />
+                    写真も、ワンタップで追加でき、
                   </p>
-                  <p>写真も、ワンタップで追加できる。</p>
                   <p>
-                    そうすれば、<br />
                     満月視点づくりの習慣化が、<br />
-                    もっと多くの人に広がるのではないか。
+                    もっと手軽に手に入る。<br />
+                    そう考えたのです。
                   </p>
-                  <p className="font-bold">そう考えたのです。</p>
                 </div>
               </div>
             </div>
@@ -481,7 +452,7 @@ export const BridgeSection = () => {
                 <span className="block">
                   美点発見の「本質」はそのままに、<br />
                   現代のライフスタイルに合わせた、<br />
-                  それが「美点発見note」です。
+                  それが「携帯版・美点発見note」です。
                 </span>
                 <span className="block mt-6">
                   紙でも、アプリでも、<br />
