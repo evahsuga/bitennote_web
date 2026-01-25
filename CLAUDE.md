@@ -30,6 +30,8 @@ npm run build
 npm run preview
 ```
 
+**注意**: このプロジェクトにはlint/test設定なし。ビルドの成功でデプロイ可否を判断。
+
 ## Architecture
 
 ### Component Structure
@@ -45,8 +47,9 @@ App.jsx
 ├── HeroSection           # グラデーション背景 + キャッチコピー
 ├── ProblemSection        # 3つの悩みカード
 ├── SolutionSection       # 満月理論の説明（図解 + 3つの核心 + 実績数値 + CF画像）
-├── StepsSection          # 3ステップの使い方（左右交互レイアウト）
-├── TestimonialsSection   # ユーザーの声（3名の体験談）
+├── BridgeSection         # 満月理論から美点発見へ（YSメソッド → 紙の価値 → ANA導入）
+├── StepsSection          # 3ステップの使い方（左右交互レイアウト + 動画）
+├── TestimonialsSection   # ユーザーの声（Swiper.js横スクロール）
 ├── DeveloperSection      # 佐藤康行氏プロフィール + 書籍 + 満月瞑想紹介
 ├── FAQSection            # アコーディオン式FAQ
 ├── CTASection            # 最終行動喚起
@@ -57,6 +60,9 @@ App.jsx
 
 **1. ScrollReveal Pattern**
 全セクションで`<ScrollReveal>`コンポーネントを使用してスクロール連動アニメーションを実装。Framer Motionの`useInView`フックベース。
+- トリガーマージン: `-100px`（画面に入る100px手前で発火）
+- アニメーション: `y: 50px → 0`, `opacity: 0 → 1`, `duration: 0.8s`
+- `delay`プロパティで連続要素の順次アニメーション可能
 
 **2. Responsive Layout**
 - モバイルファースト設計（Tailwind CSS）
@@ -94,9 +100,28 @@ Framer Motion使用:
 - **Card** - ホバー時の浮き上がり（y: -10px）
 - **FAQ Accordion** - 高さ + 不透明度のトランジション
 
+### Swiper.js Integration
+
+TestimonialsSectionで使用。カスタムスタイルは`src/styles/index.css`の`.testimonials-swiper-container`で定義:
+- デスクトップ: 左右ナビゲーションボタン + ドットインジケーター
+- モバイル: スワイプ + ドットインジケーターのみ（ボタン非表示）
+- カード高さ自動調整（`height: auto`）
+
 ### Design System Constants
 
 `src/utils/constants.js`にカラー、タイポグラフィ、スペーシングの定数を定義。ただし実際の実装ではTailwindユーティリティクラスを直接使用しているため、参照用として機能。
+
+### Japanese Text Handling
+
+日本語改行の最適化がbase layerで適用済み（`src/styles/index.css`）:
+- デスクトップ: `word-break: keep-all`（単語途中で改行しない）
+- モバイル（767px以下）: `word-break: normal`（横はみ出し防止）
+- 見出し: `text-wrap: balance`（改行位置の自動調整）
+
+カスタムユーティリティクラス:
+- `.text-balance` - 見出し用（改行バランス調整）
+- `.break-keep` - 単語区切り維持
+- `.no-break` - 改行禁止
 
 ## Content Structure
 
@@ -105,11 +130,13 @@ Framer Motion使用:
 **実装済み画像:**
 - `public/images/sato_満月三日月説明.png` - 満月理論の図解（SolutionSection）
 - `public/images/campfire_美点発見.png` - CF実績画像（SolutionSection）
+- `public/images/biten_kakidasi_kami.png` - 美点発見シート書き出し例（BridgeSection）
 - `public/images/sato-yasuyuki.png` - 佐藤康行氏プロフィール写真
 - `public/images/201610満月の法則.png` - 書籍表紙（満月の法則）
 - `public/images/202402-monday-book.png` - 書籍表紙（しんどい月曜日の朝がラクになる本）
 - `public/images/202510-mangetsu-counseling.png` - 書籍表紙（満月カウンセリング）
 - `public/images/mangetsu-meditation-start.png` - 満月瞑想紹介画像（リンク先: https://pay.ioe.jp/mmst_0821_limited-release/）
+- `public/images/night-sky-background.png` - 背景画像
 
 **実装済み動画（StepsSection）:**
 - `public/videos/movstep1.mp4` (3.0MB) + `movstep1image.png` - Step1: 大切な人を登録
@@ -135,8 +162,7 @@ Framer Motion使用:
 - FFmpegで圧縮: `ffmpeg -i input.mp4 -vcodec libx264 -crf 28 -preset slow output.mp4`
 - サムネイル画像（poster属性）で読み込み前の表示を最適化
 
-**プレースホルダー残り:**
-- ヒーロー動画エリア（右側）
+**未実装:**
 - ユーザー体験談の写真（TestimonialsSection）
 
 **画像・動画命名規則:**
@@ -166,61 +192,16 @@ Framer Motion使用:
 - デザインモックアップ: `biten_note_design_mockup.md`
 - README: `README.md`
 
-## Recent Development History
+## Git
 
-### 2026-01-17: DeveloperSection画像統合とコンテンツ強化
+- Repository: https://github.com/evahsuga/bitennote_web
+- Branch: master
+- Deployment: 未設定（手動で`dist/`をNetlify/Vercelにデプロイ）
 
-**追加セクション:**
-- TestimonialsSection（3名のユーザー体験談）
-- DeveloperSection（佐藤康行氏プロフィール + 著書 + 満月瞑想紹介）
+## Technical Notes
 
-**DeveloperSection実装内容:**
-- 左カラム:
-  - 佐藤康行氏のプロフィール写真（`sato-yasuyuki.png`）
-  - 著書3冊の表紙画像（満月の法則、しんどい月曜日の朝がラクになる本、満月カウンセリング）
-- 右カラム:
-  - 名前・肩書き・経歴
-  - 実績エリア（研修参加者50万人以上、ANA全社員研修、著書350冊以上、全国16,000校配布）
-- 満月瞑想セクション:
-  - YouTube動画 → 画像リンクに変更（`mangetsu-meditation-start.png`）
-  - リンク先: https://pay.ioe.jp/mmst_0821_limited-release/
-  - 詳細な説明文（重要キーワードを太字＋大きめフォントで強調）
-  - 引用元表記を最下段に追加
+### Tailwind v4 → v3.4 ダウングレード経緯
+PostCSS互換性問題によりTailwind CSS v4からv3.4にダウングレード。設定ファイルは`.cjs`拡張子必須（Configuration Filesセクション参照）。
 
-**SolutionSection追加:**
-- 満月三日月図解画像（`sato_満月三日月説明.png`）と写真出典
-- CAMPFIRE実績画像（`campfire_美点発見.png`）とプロジェクトリンク
-
-**画像対応:**
-- 日本語ファイル名でブラウザ読み込みエラーが発生した画像を英語ファイル名にリネーム
-- `202402しんどい月曜日の朝がラクになる本.png` → `202402-monday-book.png`
-- `202510満月カウンセリング.png` → `202510-mangetsu-counseling.png`
-- `満月瞑想スタートエディション画像.png` → `mangetsu-meditation-start.png`
-
-**レイアウト修正:**
-- DeveloperSectionのグリッドレイアウトを`grid-cols-5` → `grid-cols-2`に変更（PC表示でバランス改善）
-- 書籍表示を`object-cover` → `object-contain`に変更（画像全体表示）
-
-**コミット:**
-- commit `7db8378`: DeveloperSection layout fix
-- commit `308c2ce`: DeveloperSection画像統合とコンテンツ強化
-
-### 初回実装（2026-01-17）
-
-**プロジェクトセットアップ:**
-- Vite + React 19.2 + Tailwind CSS 3.4 + Framer Motion 12.25
-- Tailwind v4からv3.4にダウングレード（PostCSS互換性問題対応）
-- ES Modulesプロジェクト（`"type": "module"`）のため、設定ファイルを`.cjs`拡張子に変更
-
-**実装セクション:**
-- HeroSection: グラデーション背景 + キャッチコピー + CTAボタン
-- ProblemSection: 3つの悩みカード
-- SolutionSection: 満月理論の説明（3つの核心 + 実績数値）
-- StepsSection: 3ステップの使い方（左右交互レイアウト）
-- FAQSection: アコーディオン式FAQ
-- CTASection: 最終行動喚起
-- Footer: 運営情報
-
-**Git:**
-- GitHub repository: https://github.com/evahsuga/bitennote_web
-- ブランチ: master
+### 日本語ファイル名の注意
+一部ブラウザで日本語ファイル名の画像が読み込みエラーになる場合あり。新規追加ファイルは英語ファイル名推奨。既存の日本語ファイル名（`sato_満月三日月説明.png`, `201610満月の法則.png`等）は動作確認済み。
