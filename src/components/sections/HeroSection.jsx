@@ -4,8 +4,8 @@ import { Container } from '../layout/Container';
 import { Button } from '../ui/Button';
 
 export const HeroSection = () => {
-  const scrollToSignup = () => {
-    document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' });
+  const goToApp = () => {
+    window.open('https://bitennote.netlify.app/', '_blank');
   };
 
   return (
@@ -67,7 +67,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 3.0, delay: 1.8, ease: "easeOut" }}
           >
-            <Button size="large" onClick={scrollToSignup}>
+            <Button size="large" onClick={goToApp}>
               今すぐ無料で始める
             </Button>
             <p className="text-sm mt-4 opacity-90 break-keep">

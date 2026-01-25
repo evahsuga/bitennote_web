@@ -242,51 +242,26 @@ export const BridgeSection = () => {
                   だんだんノートが埋まっていくにつれて、どの社員も「会社を愛していること」や「職場の仲間を大切にしていること」がわかってきて、社員に対する感謝の気持ちが自然と湧き上がってきました。
                 </p>
                 <p>
-                  美点発見というのはとてもシンプルな手法ですが、実際にやってみると、年度末の業績がまるで別会社のように上がりはじめ、社内調査で社員の満足度が急上昇するなど、そのような成果はこれまで経験したことがないくらい驚くべきものでした。
+                  美点発見というのはとてもシンプルな手法ですが、実際にやってみると、<strong className="bg-yellow-100 px-1">年度末の業績がまるで別会社のように上がりはじめ</strong>、<strong className="bg-yellow-100 px-1">社内調査で社員の満足度が急上昇</strong>するなど、そのような成果は<strong className="bg-yellow-100 px-1">これまで経験したことがないくらい驚くべきもの</strong>でした。
                 </p>
               </div>
               <p className="text-right text-gray-600 mt-6 font-semibold">— 谷 光宏</p>
             </div>
           </ScrollReveal>
 
-          {/* 成果カード 3カラム */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <ScrollReveal delay={0.8}>
+          {/* 成果カード - 1つに集約 */}
+          <ScrollReveal delay={0.8}>
+            <div className="max-w-md mx-auto mb-12">
               <Card className="text-center">
-                <div className="text-5xl mb-4">📈</div>
-                <h4 className="text-lg font-bold text-gray-800 mb-3">従業員満足度</h4>
-                <p className="text-gray-700 leading-relaxed">
-                  伸び率<br />
-                  ダントツ<br />
-                  日本一達成
-                </p>
+                <h4 className="text-lg font-bold text-gray-800 mb-4">🎯 驚くべき成果</h4>
+                <div className="space-y-3 text-gray-700">
+                  <p>📈 従業員満足度 伸び率日本一</p>
+                  <p>🏆 次々と受賞ラッシュ</p>
+                  <p>💚 メンタル不調者がその場で回復</p>
+                </div>
               </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={1.0}>
-              <Card className="text-center">
-                <div className="text-5xl mb-4">🏆</div>
-                <h4 className="text-lg font-bold text-gray-800 mb-3">受賞ラッシュ</h4>
-                <p className="text-gray-700 leading-relaxed">
-                  これまで一度も<br />
-                  受けたことのなかった賞を<br />
-                  次々と受賞
-                </p>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={1.2}>
-              <Card className="text-center">
-                <div className="text-5xl mb-4">💚</div>
-                <h4 className="text-lg font-bold text-gray-800 mb-3">メンタル改善</h4>
-                <p className="text-gray-700 leading-relaxed">
-                  不調の部下に<br />
-                  美点発見後<br />
-                  その場で回復、職場復帰
-                </p>
-              </Card>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
 
           <ScrollReveal delay={1.4}>
             <div className="text-center">

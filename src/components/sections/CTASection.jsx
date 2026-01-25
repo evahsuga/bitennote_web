@@ -5,7 +5,7 @@ import { Button } from '../ui/Button';
 
 export const CTASection = () => {
   return (
-    <section id="cta-section" className="relative py-32 gradient-warm overflow-hidden">
+    <section id="cta-section" className="relative py-32 bg-gradient-to-br from-pink-500 to-blue-500 overflow-hidden">
       {/* 背景装飾 */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
@@ -46,9 +46,9 @@ export const CTASection = () => {
           >
             <Button
               size="large"
-              className="!bg-white !text-primary-coral shadow-2xl text-xl px-16 py-5"
+              className="!bg-white !text-pink-600 shadow-2xl text-xl px-16 py-5"
               onClick={() => {
-                alert('アプリ登録ページへ遷移します');
+                window.open('https://bitennote.netlify.app/', '_blank');
               }}
             >
               今すぐ無料で始める ▶

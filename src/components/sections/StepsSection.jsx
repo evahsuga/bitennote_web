@@ -54,13 +54,13 @@ export const StepsSection = () => {
 
         {/* 目次 */}
         <ScrollReveal delay={0.1}>
-          <div className="flex justify-center gap-4 md:gap-8 mb-8">
+          <div className="flex justify-center gap-3 md:gap-8 mb-8">
             {steps.map((step) => (
-              <div key={step.number} className="flex items-center gap-2">
+              <div key={step.number} className="flex flex-col md:flex-row items-center gap-1 md:gap-2">
                 <div className="w-8 h-8 rounded-full gradient-warm flex items-center justify-center text-white text-sm font-bold">
                   {step.number}
                 </div>
-                <span className="text-sm md:text-base text-gray-700 font-medium hidden md:inline">
+                <span className="text-xs md:text-base text-gray-700 font-medium text-center">
                   {step.title}
                 </span>
               </div>
@@ -85,9 +85,11 @@ export const StepsSection = () => {
                 pauseOnMouseEnter: true,
               }}
               loop={true}
+              loopAdditionalSlides={3}
+              initialSlide={0}
               speed={600}
               spaceBetween={16}
-              slidesPerView={1.05}
+              slidesPerView={1.1}
               centeredSlides={true}
               breakpoints={{
                 768: {
