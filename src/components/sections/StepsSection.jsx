@@ -63,7 +63,7 @@ export const StepsSection = () => {
                       {step.title}
                     </h3>
 
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6 break-keep">
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6">
                       {step.description}
                     </p>
 
@@ -75,11 +75,11 @@ export const StepsSection = () => {
                           {Array.isArray(step.tips) ? (
                             <ul className="space-y-2">
                               {step.tips.map((tip, i) => (
-                                <li key={i} className="text-gray-700 break-keep">{tip}</li>
+                                <li key={i} className="text-gray-700">{tip}</li>
                               ))}
                             </ul>
                           ) : (
-                            <p className="text-gray-700 leading-relaxed whitespace-pre-line break-keep">
+                            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                               {step.tips}
                             </p>
                           )}
@@ -128,7 +128,7 @@ export const StepsSection = () => {
                       </video>
                     ) : (
                       <div className="bg-gradient-to-br from-primary-coral to-primary-peach rounded-2xl shadow-xl aspect-video flex items-center justify-center">
-                        <p className="text-white text-xl break-keep">ステップ{step.number}動画</p>
+                        <p className="text-white text-xl">ステップ{step.number}動画</p>
                       </div>
                     )}
                   </div>
@@ -145,7 +145,7 @@ export const StepsSection = () => {
               <h3 className="text-3xl font-bold mb-6 text-balance">
                 💻 複数のデバイスで使える
               </h3>
-              <p className="text-lg leading-relaxed mb-6 break-keep">
+              <p className="text-lg leading-relaxed mb-6">
                 スマホで記録 → PCで確認<br />
                 PCで記録 → スマホで確認<br />
                 <br />
@@ -153,7 +153,7 @@ export const StepsSection = () => {
                 いつでも、<wbr />どこでも、<wbr />
                 あなたの美点発見が続きます。
               </p>
-              <p className="text-base opacity-90 break-keep">
+              <p className="text-base opacity-90">
                 オフラインでも記録可能。<wbr />
                 オンラインに戻ると自動で同期。
               </p>
