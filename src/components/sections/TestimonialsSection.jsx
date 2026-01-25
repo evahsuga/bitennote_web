@@ -97,7 +97,7 @@ export const TestimonialsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-balance">
             実際に使っている方の声
           </h2>
-          <p className="text-base text-center text-gray-600 mb-16 break-keep">
+          <p className="text-base text-center text-gray-600 mb-16">
             美点発見noteを使い始めた方々から、<wbr />温かいメッセージが届いています。
           </p>
         </ScrollReveal>
@@ -118,6 +118,7 @@ export const TestimonialsSection = () => {
 
               // オートプレイ（5秒ごと）
               autoplay={{
+                enabled: true,
                 delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
@@ -172,7 +173,7 @@ export const TestimonialsSection = () => {
                     <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-4" />
 
                     {/* 体験談本文 */}
-                    <p className="text-sm text-gray-600 leading-relaxed mb-6 break-keep whitespace-pre-line">
+                    <p className="text-sm text-gray-600 leading-relaxed mb-6 whitespace-pre-line">
                       {testimonial.content}
                     </p>
 
@@ -198,7 +199,7 @@ export const TestimonialsSection = () => {
           </div>
         </ScrollReveal>
 
-        <p className="text-center text-gray-500 text-sm mt-12 break-keep">
+        <p className="text-center text-gray-500 text-sm mt-12">
           ※ ご本人の許可を得て掲載しています
         </p>
       </Container>
