@@ -13,7 +13,7 @@ export const SolutionSection = () => {
               「満月理論」という、<wbr />
               新しい見方
             </h2>
-            <p className="text-xl text-gray-600 break-keep">
+            <p className="text-xl text-gray-600">
               佐藤康行氏が25年をかけて辿り着いた、<wbr />
               人間関係の本質を捉えた理論
             </p>
@@ -30,7 +30,7 @@ export const SolutionSection = () => {
                     🌘 三日月として見るか？<br />
                     🌕 満月として見るか？
                   </h3>
-                  <p className="text-white leading-relaxed text-lg break-keep">
+                  <p className="text-white leading-relaxed text-lg">
                     月は、<wbr />いつも「満月」です。<br />
                     ただ、<wbr />光が当たっていない部分が<wbr />
                     見えていないだけ。<br /><br />
@@ -47,7 +47,7 @@ export const SolutionSection = () => {
                     alt="満月理論の図解 - 三日月として見るか満月として見るか"
                     className="w-full rounded-2xl"
                   />
-                  <p className="text-xs text-white text-opacity-80 mt-4 leading-relaxed break-keep">
+                  <p className="text-xs text-white text-opacity-80 mt-4 leading-relaxed">
                     写真：開発者・佐藤康行（さとうやすゆき）<br />
                     【無料公開】『満月瞑想スタートエディション』視聴ページより<br />
                     <a
@@ -99,7 +99,7 @@ export const SolutionSection = () => {
                       <h4 className="text-xl font-bold mb-4 text-balance">
                         {point.title}
                       </h4>
-                      <p className="text-gray-600 leading-relaxed whitespace-pre-line break-keep">
+                      <p className="text-gray-600 leading-relaxed whitespace-pre-line">
                         {point.description}
                       </p>
                     </div>
