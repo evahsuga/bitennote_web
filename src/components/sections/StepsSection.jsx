@@ -91,6 +91,9 @@ export const StepsSection = () => {
               spaceBetween={16}
               slidesPerView={1.1}
               centeredSlides={true}
+              simulateTouch={true}
+              touchRatio={1}
+              touchStartPreventDefault={false}
               breakpoints={{
                 768: {
                   slidesPerView: 1,

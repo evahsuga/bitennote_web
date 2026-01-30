@@ -233,3 +233,14 @@ html, body {
 .steps-swiper-container .swiper-slide > div {
   height: 100%;
 }
+
+/* モバイルでのタッチスワイプを有効化 */
+.steps-swiper-container .swiper,
+.testimonials-swiper-container .swiper {
+  touch-action: pan-y pinch-zoom;
+}
+
+.steps-swiper-container .swiper-wrapper,
+.testimonials-swiper-container .swiper-wrapper {
+  touch-action: pan-y pinch-zoom;
+}

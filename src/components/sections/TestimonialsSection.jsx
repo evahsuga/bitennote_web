@@ -217,6 +217,9 @@ export const TestimonialsSection = () => {
               spaceBetween={16}
               slidesPerView={1.1}
               centeredSlides={true}
+              simulateTouch={true}
+              touchRatio={1}
+              touchStartPreventDefault={false}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
