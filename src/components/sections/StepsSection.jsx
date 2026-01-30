@@ -85,7 +85,7 @@ export const StepsSection = () => {
                 pauseOnMouseEnter: true,
               }}
               loop={true}
-              loopAdditionalSlides={3}
+              loopedSlides={3}
               initialSlide={0}
               speed={600}
               spaceBetween={16}
