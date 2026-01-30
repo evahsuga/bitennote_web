@@ -71,8 +71,9 @@ App.jsx
 
 **3. Gradient System**
 カスタムユーティリティクラス（`src/styles/index.css`）:
-- `.gradient-warm` - ヒーロー/CTAセクション用（コーラルピンク → ピーチ）
+- `.gradient-warm` - ヒーローセクション用（コーラルピンク → ピーチ）
 - `.gradient-cool` - 満月理論セクション用（ピンク → ブルー）
+- `bg-gradient-to-br from-pink-500 to-blue-500` - CTAセクション・複数デバイス対応カード用
 
 ### Configuration Files
 
@@ -102,10 +103,12 @@ Framer Motion使用:
 
 ### Swiper.js Integration
 
-TestimonialsSectionで使用。カスタムスタイルは`src/styles/index.css`の`.testimonials-swiper-container`で定義:
+TestimonialsSection・StepsSectionで使用。カスタムスタイルは`src/styles/index.css`で定義:
+- `.testimonials-swiper-container` - 体験談用
+- `.steps-swiper-container` - 使い方ステップ用
 - デスクトップ: 左右ナビゲーションボタン + ドットインジケーター
 - モバイル: スワイプ + ドットインジケーターのみ（ボタン非表示）
-- カード高さ自動調整（`height: auto`）
+- autoplay設定: `enabled: true`, `loopAdditionalSlides`でループ安定化
 
 ### Design System Constants
 
@@ -120,8 +123,9 @@ TestimonialsSectionで使用。カスタムスタイルは`src/styles/index.css`
 
 カスタムユーティリティクラス:
 - `.text-balance` - 見出し用（改行バランス調整）
-- `.break-keep` - 単語区切り維持
 - `.no-break` - 改行禁止
+
+**重要**: `.break-keep`クラスはモバイルで横スクロール問題を引き起こすため使用禁止。ベースCSSが適切に処理する。
 
 ## Content Structure
 
@@ -192,11 +196,13 @@ TestimonialsSectionで使用。カスタムスタイルは`src/styles/index.css`
 - デザインモックアップ: `biten_note_design_mockup.md`
 - README: `README.md`
 
-## Git
+## Git & Deployment
 
 - Repository: https://github.com/evahsuga/bitennote_web
 - Branch: master
-- Deployment: 未設定（手動で`dist/`をNetlify/Vercelにデプロイ）
+- LP URL: https://charming-faun-f1eee9.netlify.app/
+- App URL: https://bitennote.netlify.app/
+- Deployment: Netlify（GitHubプッシュで自動デプロイ）
 
 ## Technical Notes
 
