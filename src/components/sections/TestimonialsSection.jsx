@@ -211,6 +211,8 @@ export const TestimonialsSection = () => {
                 pauseOnMouseEnter: true,
               }}
               loop={true}
+              loopAdditionalSlides={3}
+              initialSlide={0}
               speed={600}
               spaceBetween={16}
               slidesPerView={1.1}
