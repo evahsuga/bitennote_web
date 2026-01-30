@@ -3,7 +3,7 @@ import { Container } from '../layout/Container';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { Card } from '../ui/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 // Swiper スタイル
 import 'swiper/css';
@@ -72,28 +72,16 @@ export const StepsSection = () => {
         <ScrollReveal delay={0.2}>
           <div className="steps-swiper-container">
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination]}
               navigation
               pagination={{
                 clickable: true,
                 dynamicBullets: false,
               }}
-              autoplay={{
-                enabled: true,
-                delay: 6000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              loop={true}
-              loopedSlides={3}
-              initialSlide={0}
               speed={600}
               spaceBetween={16}
               slidesPerView={1.1}
               centeredSlides={true}
-              simulateTouch={true}
-              touchRatio={1}
-              touchStartPreventDefault={false}
               breakpoints={{
                 768: {
                   slidesPerView: 1,
