@@ -1,14 +1,107 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '../layout/Container';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { Card } from '../ui/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Swiper スタイル
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+// 体験談カードコンポーネント
+const TestimonialCard = ({ testimonial }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // 冒頭部分を取得（最初の3行程度）
+  const getPreviewContent = (content) => {
+    const lines = content.split('\n').filter(line => line.trim() !== '');
+    return lines.slice(0, 3).join('\n');
+  };
+
+  const previewContent = getPreviewContent(testimonial.content);
+  const hasMoreContent = testimonial.content.length > previewContent.length;
+
+  return (
+    <Card hover={false} className="h-full">
+      {/* 写真（プレースホルダー） */}
+      <div className="flex justify-center mb-4">
+        <div className="w-16 h-16 rounded-full overflow-hidden shadow-md bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center">
+          <span className="text-white text-xl font-bold">
+            {testimonial.name.charAt(0)}
+          </span>
+        </div>
+      </div>
+
+      {/* 引用（短文） */}
+      <h3 className="text-lg md:text-xl font-bold text-primary-coral text-center mb-3 leading-relaxed text-balance">
+        {testimonial.quote}
+      </h3>
+
+      {/* 境界線 */}
+      <div className="w-12 h-0.5 bg-gray-200 mx-auto mb-3" />
+
+      {/* 体験談本文 */}
+      <div className="relative">
+        <AnimatePresence mode="wait">
+          {isExpanded ? (
+            <motion.div
+              key="expanded"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p className="text-sm text-gray-600 leading-relaxed mb-4 whitespace-pre-line">
+                {testimonial.content}
+              </p>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="preview"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p className="text-sm text-gray-600 leading-relaxed mb-2 whitespace-pre-line">
+                {previewContent}
+              </p>
+              {hasMoreContent && (
+                <div className="text-center text-gray-400 text-sm">...</div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* 続きを読む / 閉じる ボタン */}
+        {hasMoreContent && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="w-full text-center text-primary-coral text-sm font-medium py-2 hover:underline focus:outline-none"
+          >
+            {isExpanded ? '閉じる ▲' : '続きを読む ▼'}
+          </button>
+        )}
+      </div>
+
+      {/* 境界線 */}
+      <div className="w-12 h-0.5 bg-gray-200 mx-auto mb-3 mt-2" />
+
+      {/* 名前・情報 */}
+      <div className="text-center">
+        <p className="font-semibold text-gray-800 text-sm">
+          {testimonial.name}
+        </p>
+        <p className="text-xs text-gray-600">
+          {testimonial.age}・{testimonial.location}
+        </p>
+      </div>
+    </Card>
+  );
+};
 
 export const TestimonialsSection = () => {
   const testimonials = [
@@ -91,13 +184,13 @@ export const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-light-gray">
+    <section className="py-16 md:py-24 bg-light-gray">
       <Container>
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-balance">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-3 text-balance">
             実際に使っている方の声
           </h2>
-          <p className="text-base text-center text-gray-600 mb-16">
+          <p className="text-sm text-center text-gray-600 mb-10">
             美点発見noteを使い始めた方々から、<wbr />温かいメッセージが届いています。
           </p>
         </ScrollReveal>
@@ -106,46 +199,29 @@ export const TestimonialsSection = () => {
           <div className="testimonials-swiper-container">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-
-              // 左右ボタン（デスクトップのみ）
               navigation
-
-              // インジケーター（ドット・クリック可能）
               pagination={{
                 clickable: true,
                 dynamicBullets: false,
               }}
-
-              // オートプレイ（5秒ごと）
               autoplay={{
                 enabled: true,
                 delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
               }}
-
-              // ループ（無限スクロール）
               loop={true}
-
-              // スワイプの滑らかさ
               speed={600}
-
-              // カード間のスペース
-              spaceBetween={24}
-
-              // ピークアウト（モバイルで次のカードが少し見える）
+              spaceBetween={16}
               slidesPerView={1.1}
               centeredSlides={true}
-
-              // レスポンシブ対応
               breakpoints={{
                 768: {
                   slidesPerView: 1,
                   centeredSlides: false,
+                  spaceBetween: 24,
                 },
               }}
-
-              // アクセシビリティ
               a11y={{
                 prevSlideMessage: '前の体験談',
                 nextSlideMessage: '次の体験談',
@@ -154,52 +230,14 @@ export const TestimonialsSection = () => {
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide key={testimonial.id}>
-                  <Card hover={false} className="h-full">
-                    {/* 写真（プレースホルダー） */}
-                    <div className="flex justify-center mb-6">
-                      <div className="w-20 h-20 rounded-full overflow-hidden shadow-md bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center">
-                        <span className="text-white text-2xl font-bold">
-                          {testimonial.name.charAt(0)}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* 引用（短文） */}
-                    <h3 className="text-xl md:text-2xl font-bold text-primary-coral text-center mb-4 leading-relaxed text-balance">
-                      {testimonial.quote}
-                    </h3>
-
-                    {/* 境界線 */}
-                    <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-4" />
-
-                    {/* 体験談本文 */}
-                    <p className="text-sm text-gray-600 leading-relaxed mb-6 whitespace-pre-line">
-                      {testimonial.content}
-                    </p>
-
-                    {/* 境界線 */}
-                    <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-4" />
-
-                    {/* 名前・情報 */}
-                    <div className="text-center">
-                      <p className="font-semibold text-gray-800">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        {testimonial.age}
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        {testimonial.location}
-                      </p>
-                    </div>
-                  </Card>
+                  <TestimonialCard testimonial={testimonial} />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
         </ScrollReveal>
 
-        <p className="text-center text-gray-500 text-sm mt-12">
+        <p className="text-center text-gray-500 text-xs mt-8">
           ※ ご本人の許可を得て掲載しています
         </p>
       </Container>
