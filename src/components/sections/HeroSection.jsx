@@ -5,7 +5,7 @@ import { Button } from '../ui/Button';
 
 export const HeroSection = () => {
   const goToApp = () => {
-    window.open('https://bitennote.netlify.app/', '_blank');
+    window.open('https://evahsuga.github.io/biten_note/', '_blank');
   };
 
   return (
