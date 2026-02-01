@@ -48,7 +48,7 @@ export const CTASection = () => {
               size="large"
               className="!bg-white !text-pink-600 shadow-2xl text-xl px-16 py-5"
               onClick={() => {
-                window.open('https://evahsuga.github.io/biten_note/', '_blank');
+                window.open('https://evahsuga.github.io/biten_note/#/', '_blank');
               }}
             >
               今すぐ無料で始める ▶
