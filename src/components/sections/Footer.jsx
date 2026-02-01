@@ -42,12 +42,34 @@ export const Footer = () => {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <a
-                    href="https://bitennote.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#mangetsu-theory"
                     className="hover:text-primary-coral transition-colors"
                   >
-                    アプリを開く
+                    満月理論とは
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#biten-discovery"
+                    className="hover:text-primary-coral transition-colors"
+                  >
+                    美点発見とは
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#biten-episode"
+                    className="hover:text-primary-coral transition-colors"
+                  >
+                    美点発見noteエピソード
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#how-to-use"
+                    className="hover:text-primary-coral transition-colors"
+                  >
+                    アプリの使い方
                   </a>
                 </li>
                 <li>

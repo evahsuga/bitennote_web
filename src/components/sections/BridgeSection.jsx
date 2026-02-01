@@ -7,7 +7,7 @@ export const BridgeSection = () => {
   return (
     <>
       {/* Part 1: YSメソッドから生まれた「美点発見」 */}
-      <section className="py-20 md:py-32 bg-white">
+      <section id="biten-discovery" className="py-20 md:py-32 bg-white">
         <Container>
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -181,7 +181,7 @@ export const BridgeSection = () => {
       </section>
 
       {/* Part 3: ある実践者の驚異的な物語 */}
-      <section className="py-20 md:py-32 bg-white">
+      <section id="biten-episode" className="py-20 md:py-32 bg-white">
         <Container>
           <ScrollReveal>
             <div className="text-center mb-16">

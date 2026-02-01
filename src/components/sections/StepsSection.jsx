@@ -39,7 +39,7 @@ export const StepsSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-light-gray">
+    <section id="how-to-use" className="py-16 md:py-24 bg-light-gray">
       <Container>
         <ScrollReveal>
           <div className="text-center mb-8">

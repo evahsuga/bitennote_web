@@ -5,7 +5,7 @@ import { Card } from '../ui/Card';
 
 export const SolutionSection = () => {
   return (
-    <section className="py-20 md:py-32">
+    <section id="mangetsu-theory" className="py-20 md:py-32">
       <Container>
         <ScrollReveal>
           <div className="text-center mb-16">
