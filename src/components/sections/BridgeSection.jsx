@@ -209,8 +209,12 @@ export const BridgeSection = () => {
               <div className="grid md:grid-cols-4 gap-8 items-center">
                 {/* 左側: 写真 */}
                 <div className="flex justify-center md:col-span-1">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-coral to-primary-peach flex items-center justify-center shadow-lg">
-                    <span className="text-white text-2xl font-bold">谷</span>
+                  <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/tani-mitsuhiro.png`}
+                      alt="谷 光宏氏"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
