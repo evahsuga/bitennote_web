@@ -185,9 +185,22 @@ export const BridgeSection = () => {
         <Container>
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 ある実践者の、驚異的な物語
               </h2>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                クラウドファンディング（CF）：<br />
+                「美点発見」を全国の学校に広めていじめや不登校・自殺を撲滅するためのプロジェクト<br />
+                の推薦者の声から抜粋紹介<br />
+                <a
+                  href="https://camp-fire.jp/projects/656368/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-coral hover:underline"
+                >
+                  https://camp-fire.jp/projects/656368/view
+                </a>
+              </p>
             </div>
           </ScrollReveal>
 
@@ -265,9 +278,13 @@ export const BridgeSection = () => {
 
           <ScrollReveal delay={1.4}>
             <div className="text-center">
-              <p className="text-xl md:text-2xl text-gray-800 font-bold leading-relaxed">
-                その後、ANAの全社員43,000人に、<br />
-                美点発見が導入されました。
+              <p className="text-xl md:text-2xl text-gray-800 font-bold leading-relaxed mb-4">
+                ANA（全日空）では<br />
+                グループ全社員43,000人を対象に<br />
+                研修が行われています。
+              </p>
+              <p className="text-xs text-gray-500">
+                CFからの抜粋紹介ここまで
               </p>
             </div>
           </ScrollReveal>
