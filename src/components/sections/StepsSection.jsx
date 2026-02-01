@@ -17,24 +17,24 @@ export const StepsSection = () => {
       icon: "👤",
       title: "大切な人を登録",
       description: "「新しい人を追加」をタップ。\n名前・写真・関係性を入力。\nたった30秒で完了。",
-      video: "/videos/movstep1.mp4",
-      poster: "/videos/movstep1image.png"
+      video: `${import.meta.env.BASE_URL}videos/movstep1.mp4`,
+      poster: `${import.meta.env.BASE_URL}videos/movstep1image.png`
     },
     {
       number: "2",
       icon: "✍️",
       title: "良いところを記録",
       description: "登録した人をタップ。\n15文字程度の短いメモで記録。\nどんな小さなことでもOK。",
-      video: "/videos/movstep2_1.mp4",
-      poster: "/videos/movstep2image.png"
+      video: `${import.meta.env.BASE_URL}videos/movstep2_1.mp4`,
+      poster: `${import.meta.env.BASE_URL}videos/movstep2image.png`
     },
     {
       number: "3",
       icon: "📖",
       title: "振り返る、贈る",
       description: "チャット形式で振り返り。\n心がじんわり満たされる。\nPDFでプレゼントも可能。",
-      video: "/videos/movstep3.mp4",
-      poster: "/videos/movstep3image.png"
+      video: `${import.meta.env.BASE_URL}videos/movstep3.mp4`,
+      poster: `${import.meta.env.BASE_URL}videos/movstep3image.png`
     },
   ];
 

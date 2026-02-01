@@ -111,7 +111,7 @@ export const BridgeSection = () => {
               <div className="flex flex-col items-center md:items-start">
                 <div className="w-48 md:w-64 mb-6">
                   <img
-                    src="/images/202402-monday-book.png"
+                    src={`${import.meta.env.BASE_URL}images/202402-monday-book.png`}
                     alt="しんどい月曜日の朝がラクになる本"
                     className="w-full rounded-xl shadow-xl"
                   />
@@ -156,7 +156,7 @@ export const BridgeSection = () => {
                 {/* 美点発見シート画像 */}
                 <div className="bg-white rounded-xl p-6 shadow-md mt-8">
                   <img
-                    src="/images/biten_kakidasi_kami.png"
+                    src={`${import.meta.env.BASE_URL}images/biten_kakidasi_kami.png`}
                     alt="美点発見シート - 紙に書き出す例"
                     className="w-full rounded-lg"
                   />

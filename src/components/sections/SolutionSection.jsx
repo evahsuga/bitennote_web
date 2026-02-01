@@ -43,7 +43,7 @@ export const SolutionSection = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="/images/sato_満月三日月説明.png"
+                    src={`${import.meta.env.BASE_URL}images/sato_満月三日月説明.png`}
                     alt="満月理論の図解 - 三日月として見るか満月として見るか"
                     className="w-full rounded-2xl"
                   />
@@ -155,7 +155,7 @@ export const SolutionSection = () => {
                 className="block hover:opacity-80 transition-opacity duration-300"
               >
                 <img
-                  src="/images/campfire_美点発見.png"
+                  src={`${import.meta.env.BASE_URL}images/campfire_美点発見.png`}
                   alt="クラウドファンディング - 美点発見プロジェクト"
                   className="w-full rounded-2xl shadow-lg"
                 />

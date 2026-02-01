@@ -14,7 +14,7 @@ export const HeroSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/night-sky-background.png)',
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/night-sky-background.png)`,
         }}
       />
 

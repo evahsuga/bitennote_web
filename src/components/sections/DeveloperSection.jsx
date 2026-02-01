@@ -4,9 +4,9 @@ import { ScrollReveal } from '../ui/ScrollReveal';
 
 export const DeveloperSection = () => {
   const books = [
-    { image: '/images/201610満月の法則.png', title: '満月の法則' },
-    { image: '/images/202402-monday-book.png', title: 'しんどい月曜日の朝がラクになる本' },
-    { image: '/images/202510-mangetsu-counseling.png', title: '満月カウンセリング' },
+    { image: `${import.meta.env.BASE_URL}images/201610満月の法則.png`, title: '満月の法則' },
+    { image: `${import.meta.env.BASE_URL}images/202402-monday-book.png`, title: 'しんどい月曜日の朝がラクになる本' },
+    { image: `${import.meta.env.BASE_URL}images/202510-mangetsu-counseling.png`, title: '満月カウンセリング' },
   ];
 
   return (
@@ -30,7 +30,7 @@ export const DeveloperSection = () => {
               <div className="w-full max-w-sm mb-8">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <img
-                    src="/images/sato-yasuyuki.png"
+                    src={`${import.meta.env.BASE_URL}images/sato-yasuyuki.png`}
                     alt="佐藤康行氏のプロフィール写真"
                     className="w-full h-full object-cover"
                   />
@@ -118,7 +118,7 @@ export const DeveloperSection = () => {
                 className="block hover:opacity-90 transition-opacity duration-300"
               >
                 <img
-                  src="/images/mangetsu-meditation-start.png"
+                  src={`${import.meta.env.BASE_URL}images/mangetsu-meditation-start.png`}
                   alt="満月瞑想スタートエディション - クリックして詳細を見る"
                   className="w-full rounded-2xl shadow-xl"
                 />
